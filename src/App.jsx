@@ -43,7 +43,7 @@ function App() {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        setBox(i)
+        setWinner(i)
         return squares[a];
       }
 
@@ -55,7 +55,7 @@ function App() {
     <>
 
       <div id='app' className='h-screen w-screen flex justify-center items-center'>
-        <TurnContextProvider value={{ turn, setTurn, nextTurn, setNextTurn, squares, setSquares, handleClick,winner }}>
+        <TurnContextProvider value={{ turn, setTurn, nextTurn, setNextTurn, squares, setSquares, handleClick, winner }}>
           <GameBoard></GameBoard>
         </TurnContextProvider>
 
